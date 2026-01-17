@@ -11,7 +11,7 @@ public class WebController {
 
     @GetMapping("/home")
     public String home(Model model) {
-        model.addAttribute("message", "Welcome to the Home Page!");
+        model.addAttribute("time", java.time.LocalDateTime.now().toString());
         return "home";
     }
 }
