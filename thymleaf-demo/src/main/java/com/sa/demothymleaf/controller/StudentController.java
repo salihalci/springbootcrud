@@ -16,10 +16,19 @@ public class StudentController {
         return "student-form";
     }
 
+    @GetMapping("/show-student-form-dropdown")
+    public String showFormDropdown(Model theModel) {
+        Student theStudent = new Student();
+        theModel.addAttribute("student", theStudent);
+        return "student-form-dropdown";
+    }
+
     @PostMapping("/process-student-form")
     public String processStudentForm(@ModelAttribute("student") Student theStudent, Model theModel) {
         System.out.println(theStudent.getFirstName() + " " + theStudent.getLastName());
         theModel.addAttribute("student", theStudent);
         return "student-confirmation";
     }
+
+
 }
