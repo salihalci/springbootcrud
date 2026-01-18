@@ -4,6 +4,8 @@ package com.sa.demothymleaf.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -40,6 +42,24 @@ public class HelloWorldController {
     //Requestparam ile form üzerindeki alanı otomatik olarak map ediyoruz.
     @RequestMapping("process-formV3")
     public String processFormV3(@RequestParam("studentName") String theName, Model model){
+
+        //String theName = request.getParameter("studentName");
+
+        theName = theName.toUpperCase();
+        String result = "UpperCase! " + theName;
+        model.addAttribute("message", result);
+        return "process-formV3";
+    }
+
+    @GetMapping("show-formV4")
+    public String showFormV4(){
+        return "helloworld-formV4";
+    }
+
+
+    //Requestparam ile form üzerindeki alanı otomatik olarak map ediyoruz.
+    @PostMapping("process-formV4")
+    public String processFormV4(@RequestParam("studentName") String theName, Model model){
 
         //String theName = request.getParameter("studentName");
 
