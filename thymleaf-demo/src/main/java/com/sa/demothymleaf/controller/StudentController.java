@@ -18,15 +18,18 @@ public class StudentController {
     @Value("${countries}")
     private List<String> countries;
 
+    //inject from propeties.file
+
+    @Value("${languages}")
+    private List<String> languages;
+
+
     @GetMapping("/show-student-form")
     public String showForm(Model theModel) {
         Student theStudent = new Student();
         theModel.addAttribute("student", theStudent);
         return "student-form";
     }
-
-
-
 
     @GetMapping("/show-student-form-dropdown")
     public String showFormDropdown(Model theModel) {
@@ -56,7 +59,20 @@ public class StudentController {
         theModel.addAttribute("student", theStudent);
         theModel.addAttribute("countries", countries);
 
-        return "student-form-radiobutton";
+        return "student-form-radiobutton2";
+
+    }
+
+    @GetMapping("/show-student-form-radiobutton2")
+    public String showFormRadioButton2(Model theModel) {
+
+        Student theStudent = new Student();
+        theModel.addAttribute("student", theStudent);
+        theModel.addAttribute("countries", countries);
+
+        theModel.addAttribute("languages", languages);
+
+        return "student-form-radiobutton2";
 
     }
 
