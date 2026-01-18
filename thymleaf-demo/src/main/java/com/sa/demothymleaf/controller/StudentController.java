@@ -48,9 +48,25 @@ public class StudentController {
         return "student-form-dropdown2";
     }
 
+
+    @GetMapping("/show-student-form-radiobutton")
+    public String showFormRadioButton(Model theModel) {
+
+        Student theStudent = new Student();
+        theModel.addAttribute("student", theStudent);
+        theModel.addAttribute("countries", countries);
+
+        return "student-form-radiobutton";
+
+    }
+
+
+
     @PostMapping("/process-student-form")
     public String processStudentForm(@ModelAttribute("student") Student theStudent, Model theModel) {
+
         System.out.println(theStudent.getFirstName() + " " + theStudent.getLastName());
+
         theModel.addAttribute("student", theStudent);
         return "student-confirmation";
     }
