@@ -23,6 +23,8 @@ public class StudentController {
     @Value("${languages}")
     private List<String> languages;
 
+    @Value("${systems}")
+    private List<String> systems;
 
     @GetMapping("/show-student-form")
     public String showForm(Model theModel) {
@@ -73,6 +75,31 @@ public class StudentController {
         theModel.addAttribute("languages", languages);
 
         return "student-form-radiobutton2";
+
+    }
+
+
+    @GetMapping("/show-student-form-checkbox")
+    public String showForCheckbox(Model theModel) {
+
+        Student theStudent = new Student();
+        theModel.addAttribute("student", theStudent);
+        theModel.addAttribute("countries", countries);
+        theModel.addAttribute("languages", languages);
+
+        return "student-form-checkbox";
+
+    }
+    @GetMapping("/show-student-form-checkbox2")
+    public String showForCheckbox2(Model theModel) {
+
+        Student theStudent = new Student();
+        theModel.addAttribute("student", theStudent);
+        theModel.addAttribute("countries", countries);
+        theModel.addAttribute("languages", languages);
+        theModel.addAttribute("systems", systems);
+
+        return "student-form-checkbox2";
 
     }
 

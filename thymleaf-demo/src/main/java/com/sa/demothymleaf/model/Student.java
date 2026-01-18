@@ -1,13 +1,26 @@
 package com.sa.demothymleaf.model;
 
+import java.util.List;
+
 public class Student {
 
     private String firstName;
     private String lastName;
     private String country;
     private String favoriteLanguage;
+    private List<String> favoriteSystems;
+
 
     public Student() {
+    }
+
+
+    public List<String> getFavoriteSystems() {
+        return favoriteSystems;
+    }
+
+    public void setFavoriteSystems(List<String> favoriteSystems) {
+        this.favoriteSystems = favoriteSystems;
     }
 
     public String getFirstName() {
