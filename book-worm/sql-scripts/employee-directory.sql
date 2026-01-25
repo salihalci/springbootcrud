@@ -22,11 +22,11 @@ COLLATE=utf8mb4_turkish_ci;
 -- Data for table `employee`
 --
 
-INSERT INTO `book` (`id`, `title`, `author`, `picture_url`) VALUES
-(1, 'Sefiller', 'Victor Hugo', 'sefiller.jpg'),
-(2, 'Suç ve Ceza', 'Fyodor Dostoyevski', 'suc_ve_ceza.jpg'),
-(3, '1984', 'George Orwell', '1984.jpg'),
-(4, 'Kürk Mantolu Madonna', 'Sabahattin Ali', 'kurk_mantolu_madonna.jpg'),
-(5, 'Simyacı', 'Paulo Coelho', 'simyaci.jpg');
+    INSERT INTO `book` (`id`, `title`, `author`, `picture_url`) VALUES
+    (1, 'Sefiller', 'Victor Hugo', 'sefiller.jpg'),
+    (2, 'Suç ve Ceza', 'Fyodor Dostoyevski', 'suc_ve_ceza.jpg'),
+    (3, '1984', 'George Orwell', '1984.jpg'),
+    (4, 'Kürk Mantolu Madonna', 'Sabahattin Ali', 'kurk_mantolu_madonna.jpg'),
+    (5, 'Simyacı', 'Paulo Coelho', 'simyaci.jpg');
 
 

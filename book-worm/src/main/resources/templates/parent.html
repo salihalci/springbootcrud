@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle} ?: 'My App'">Default Title</title>
+    <link rel="stylesheet" th:href="@{/css/sepia.css}">
+</head>
+<body>
+
+<!-- Top Navigation Bar -->
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a href="#" class="nav-link">🏠 Home</a>
+        <a href="#" class="nav-link">📚 List</a>
+    </div>
+    <div class="navbar-search">
+        <form class="search-form-navbar" method="GET">
+            <input type="text" placeholder="Search by title or author..." class="search-input-navbar" name="search">
+            <button type="submit" class="search-btn-navbar">🔍</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- Child sayfadan gelecek içerik -->
+    <div layout:fragment="content"></div>
+</div>
+
+<footer>
+    <p>© 2026 My Book App</p>
+</footer>
+
+</body>
+</html>
