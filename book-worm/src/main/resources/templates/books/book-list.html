@@ -14,10 +14,11 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th>Thumbnail</th>
+            <th>Photo</th>
             <th>Title</th>
             <th>Author</th>
-            <th>Picture URL</th>
+            <th>Start-Date</th>
+            <th>End-Date</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -28,11 +29,14 @@
                 <img th:src="@{/images/sampleimage.jpg}" alt="cat" class="thumbnail">
             </td>
             <td th:text="${book.title}">Book Title</td>
-            <td th:text="${book.author}">Author Name</td>
-            <td th:text="${book.pictureUrl}">https://example.com/image.jpg</td>
+            <td th:text="${book.author}">Author</td>
+            <td th:text="${book.startDate}">Start-Date</td>
+            <td th:text="${book.endDate}">End-Date</td>
+
             <td>
                 <a th:href="@{'/books/edit/' + ${book.id}}" class="action-btn edit-btn">Edit</a>
                 <a th:href="@{'/books/delete/' + ${book.id}}" class="action-btn delete-btn">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>

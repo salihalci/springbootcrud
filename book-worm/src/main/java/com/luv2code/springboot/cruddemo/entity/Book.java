@@ -2,6 +2,10 @@ package com.luv2code.springboot.cruddemo.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+
 @Entity
 @Table(name="book")
 public class Book {
@@ -17,14 +21,26 @@ public class Book {
     @Column(name="picture_url")
     private String pictureUrl;
 
+    @Column(name = "startdate" )
+    private LocalDateTime startDate;
+
+    @Column(name = "enddate" )
+    private LocalDateTime endDate;
+
+
+
+    @Column(name="comment")
+    private String comment;
+
     public Book() {
     }
 
-    public Book(Integer id, String title, String author, String pictureUrl) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.pictureUrl = pictureUrl;
+    public void setStartDate(LocalDateTime startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(LocalDateTime endDate) {
+        this.endDate = endDate;
     }
 
     public Integer getId() {
@@ -59,6 +75,23 @@ public class Book {
         this.pictureUrl = pictureUrl;
     }
 
+
+    public LocalDateTime getStartDate() {
+        return startDate;
+    }
+
+    public LocalDateTime getEndDate() {
+        return endDate;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -66,6 +99,9 @@ public class Book {
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", pictureUrl='" + pictureUrl + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", comment='" + comment + '\'' +
                 '}';
     }
 }
