@@ -1,0 +1,198 @@
+/* Old Sepia Notebook Theme */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Indie+Flower&family=Patrick+Hand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body – yellowed notebook paper */
+body {
+    background-color: #f6f0d8;
+    color: #4b3a2f;
+    font-family: 'Caveat', cursive;
+    line-height: 1.9;
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(120, 90, 60, 0.12) 1px,
+            transparent 1px
+        );
+    background-size: 100% 34px;
+}
+
+/* Navbar – notebook cover */
+.navbar {
+    background-color: #8b6b45;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link {
+    color: #f7efd2;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.4rem;
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Headings – handwritten ink */
+h1, h2, h3, h4 {
+    font-family: 'Patrick Hand', cursive;
+    color: #3f2d20;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    border-bottom: 2px solid #c7b089;
+    padding-bottom: 0.4rem;
+}
+
+h2 {
+    font-size: 2.1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Links – pencil underline */
+a {
+    color: #6b4a2e;
+    text-decoration: none;
+    border-bottom: 1px dotted #6b4a2e;
+}
+
+a:hover {
+    opacity: 0.85;
+}
+
+/* Buttons – pressed paper */
+button,
+input[type="submit"] {
+    background-color: #b08a57;
+    color: #3f2d20;
+    border: 1px solid #8b6b45;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Inputs – notebook writing area */
+input,
+select,
+textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #a68a64;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    font-family: 'Caveat', cursive;
+    color: #4b3a2f;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-bottom-color: #6b4a2e;
+}
+
+/* Tables – ledger notebook */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.35);
+    margin: 2rem 0;
+    font-family: 'Patrick Hand', cursive;
+}
+
+table thead {
+    background-color: #d9c7a3;
+    color: #3f2d20;
+}
+
+table th,
+table td {
+    padding: 0.8rem;
+    border-bottom: 1px dashed #bfa67a;
+}
+
+table tbody tr:hover {
+    background-color: rgba(191, 166, 122, 0.25);
+}
+
+/* Thumbnails – old photo glued */
+.thumbnail {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border: 2px solid #bfa67a;
+    background-color: #f2e8cc;
+    padding: 3px;
+    filter: sepia(40%);
+}
+
+/* Container – notebook margins */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 3rem;
+}
+
+/* Cards – paper sheets */
+.card {
+    background-color: rgba(255, 255, 255, 0.45);
+    border: 1px solid #cbb58f;
+    padding: 1.6rem;
+    margin-bottom: 1.8rem;
+}
+
+/* Footer – last page */
+.footer {
+    background-color: #8b6b45;
+    color: #f7efd2;
+    text-align: center;
+    padding: 1.4rem;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.2rem;
+}
+
+/* Alerts – margin notes */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 6px solid;
+    background-color: rgba(255, 255, 255, 0.4);
+    font-family: 'Patrick Hand', cursive;
+}
+
+.alert-success {
+    border-color: #6b8e23;
+}
+
+.alert-warning {
+    border-color: #c47f2c;
+}
+
+.alert-danger {
+    border-color: #8b3a3a;
+}

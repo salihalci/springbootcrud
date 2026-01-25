@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class DemoController {
@@ -20,8 +19,18 @@ public class DemoController {
         userList.add(new User(2,"Orhan","Pamuk@gmail.co"));
         userList.add(new User(3,"Yaşar","Kemal@gmail.co"));
 
+        List<Customer> customerList = new ArrayList<>();
+        customerList.add(new Customer(1,"John","Doe"));
+        customerList.add(new Customer(2,"Jane","Smith"));
+
+        for (int i = 0; i < customerList.size(); i++) {
+            System.out.println(customerList.get(i).);
+        }
         model.addAttribute("name", "World");
         model.addAttribute("userList", userList);
         return "hello"; // This will render the hello.html Thymeleaf template
     }
+}
+
+record Customer(int id, String name, String surname) {
 }

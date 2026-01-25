@@ -4,7 +4,7 @@ import com.luv2code.springboot.cruddemo.entity.Employee;
 
 import java.util.List;
 
-public interface EmployeeService {
+public interface EmployeeService  {
 
     List<Employee> findAll();
 

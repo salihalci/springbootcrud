@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="stylesheet" th:href="@{/css/sepia.css}">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="#" class="nav-link">🏠 Home</a>
+            <a href="#" class="nav-link">📚 List</a>
+        </div>
+        <div class="navbar-search">
+            <form class="search-form-navbar" method="GET">
+                <input type="text" placeholder="Search by title or author..." class="search-input-navbar" name="search">
+                <button type="submit" class="search-btn-navbar">🔍</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Thumbnail</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Picture URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book : ${books}">
+                    <td th:text="${book.id}">1</td>
+                    <td class="thumbnail-cell">
+                        <img th:src="@{/images/sampleimage.jpg}" alt="cat" class="thumbnail">
+                    </td>
+                    <td th:text="${book.title}">Book Title</td>
+                    <td th:text="${book.author}">Author Name</td>
+                    <td th:text="${book.pictureUrl}">https://example.com/image.jpg</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

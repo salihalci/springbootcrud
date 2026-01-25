@@ -6,56 +6,212 @@
     <title>Greeting</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font: el yazısı -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <!-- Sadece arka plan, butonlar ve el yazısı fontu için sepya -->
+    <style>
+        :root{
+          --sepia-bg: #f4ecd8;
+          --sepia-surface: #efe3c8;
+          --sepia-accent: #8b5e3c;
+          --sepia-dark: #5a3d2b;
+          --sepia-muted: #bfa98b;
+          --sepia-text: #3e2c20;
+          --sepia-border: rgba(90,61,43,0.12);
+        }
+
+        body {
+          background-color: var(--sepia-bg);
+          color: var(--sepia-text);
+          font-family: 'Patrick Hand', cursive;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navbar as a menu: transparent background, subtle border */
+        .navbar {
+          background-color: transparent;
+          border-bottom: 1px solid rgba(90,61,43,0.06);
+        }
+        .navbar .navbar-brand {
+          color: var(--sepia-dark);
+          font-weight: 600;
+        }
+        .navbar .nav-link {
+          color: var(--sepia-dark);
+        }
+        .navbar .nav-link:hover {
+          color: var(--sepia-accent);
+        }
+        .navbar .dropdown-menu {
+          background: var(--sepia-surface);
+          border: 1px solid rgba(90,61,43,0.08);
+        }
+
+        /* Butonları arka planla uyumlu yap */
+        .btn,
+        .btn-sm {
+          background-color: var(--sepia-bg);
+          color: var(--sepia-dark);
+          border-color: var(--sepia-border);
+          box-shadow: none;
+          font-family: 'Patrick Hand', cursive;
+        }
+
+        .btn-outline-primary {
+          background-color: var(--sepia-bg);
+          color: var(--sepia-dark);
+          border-color: rgba(90,61,43,0.18);
+        }
+        .btn-outline-primary:hover,
+        .btn-outline-primary:focus {
+          background-color: var(--sepia-surface);
+          color: var(--sepia-bg);
+          border-color: rgba(90,61,43,0.28);
+        }
+
+        .btn-outline-danger {
+          background-color: var(--sepia-bg);
+          color: #7a2f2f;
+          border-color: rgba(122,47,47,0.18);
+        }
+        .btn-outline-danger:hover,
+        .btn-outline-danger:focus {
+          background-color: rgba(122,47,47,0.9);
+          color: #fff;
+          border-color: rgba(122,47,47,0.9);
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+        .btn:active { transform: translateY(0); }
+
+        .display-6 {
+          color: var(--sepia-dark) !important;
+          font-family: 'Patrick Hand', cursive;
+          font-size: 1.75rem;
+        }
+        .lead {
+          color: rgba(62,44,32,0.9);
+          font-family: 'Patrick Hand', cursive;
+        }
+
+        /* Email hücresi: sabit genişlik ayarı, taşmayı ellipsis ile gizle ve görünürlüğü ayrı sınıfla kontrol et */
+        .email-cell {
+          width: 280px; /* gerekli genişliği proje ihtiyaçlarına göre ayarlayın */
+          max-width: 320px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        /* (Geri alındı) .email-hidden ve .table-fixed kaldırıldı, d-none kullanılacak */
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
-  <div class="container">
-    <a class="navbar-brand" href="#">Hello Demo</a>
-  </div>
+<nav class="navbar navbar-expand-lg mb-4">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">Hello Demo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topMenu" aria-controls="topMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: var(--sepia-dark);"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="topMenu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}" th:classappend="${page=='home'} ? ' active'">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/users}" th:classappend="${page=='users'} ? ' active'">Kullanıcılar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/about}" th:classappend="${page=='about'} ? ' active'">Hakkında</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="settingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Ayarlar
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="settingsDropdown">
+                        <li><a class="dropdown-item" th:href="@{/settings/profile}">Profil</a></li>
+                        <li><a class="dropdown-item" th:href="@{/settings/preferences}">Tercihler</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" th:href="@{/logout}">Çıkış</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <form class="d-flex" role="search" th:action="@{/search}" method="get">
+                <input class="form-control me-2" type="search" name="q" placeholder="Ara..." aria-label="Ara">
+                <button class="btn btn-outline-primary" type="submit">Ara</button>
+            </form>
+        </div>
+    </div>
 </nav>
 
 <div class="container">
-  <div class="row mb-3">
-    <div class="col">
-      <h1 th:text="${name}" class="display-6">Placeholder Name</h1>
-      <p class="lead" th:text="'Hello, ' + ${name} + '! This is a Thymeleaf example.'">Placeholder greeting</p>
+    <div class="row mb-3">
+        <div class="col">
+            <h1 th:text="${name}" class="display-6">Placeholder Name</h1>
+            <p class="lead" th:text="'Hello, ' + ${name} + '! This is a Thymeleaf example.'">Placeholder greeting</p>
+        </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col">
-      <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <span>Users</span>
-          <span class="badge bg-secondary" th:text="${#lists.size(userList)}">0</span>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Users</span>
+                    <span class="badge bg-secondary" th:text="${#lists.size(userList)}">0</span>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover mb-0">
+                            <thead class="table-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="user, iterStat : ${userList}">
+                                <th scope="row" th:text="${iterStat.count}">1</th>
+                                <td th:text="${user.name}">Name</td>
+                                <td class="email-cell d-none"><a th:href="${'mailto:' + user.email}" th:text="${user.email}">email@example.com</a></td>
+                                <td class="text-end">
+                                    <button type="button" class="btn btn-sm btn-outline-primary me-2 btn-show">Show</button>
+                                    <a th:href="@{/users/{id}/edit(id=${iterStat.index})}" class="btn btn-sm btn-outline-primary me-2">Update</a>
+                                    <a th:href="@{/users/{id}/delete(id=${iterStat.index})}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-body p-0">
-          <div class="table-responsive">
-            <table class="table table-striped table-hover mb-0">
-              <thead class="table-light">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Email</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr th:each="user, iterStat : ${userList}">
-                  <th scope="row" th:text="${iterStat.count}">1</th>
-                  <td th:text="${user.name}">Name</td>
-                  <td><a th:href="${'mailto:' + user.email}" th:text="${user.email}">email@example.com</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 
 </div>
 
 <!-- Bootstrap JS bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- htmx (CDN) -->
+<script src="https://unpkg.com/htmx.org@1.10.0"></script>
+
+<!-- Satır içi email göster/gizle için küçük JS (tüm .btn-show butonlarını dinler) -->
+<script>
+  document.addEventListener('click', function(event) {
+    const btn = event.target.closest('.btn-show');
+    if (!btn) return;
+    const tr = btn.closest('tr');
+    if (!tr) return;
+    const emailCell = tr.querySelector('.email-cell');
+    if (!emailCell) return;
+    const isHidden = emailCell.classList.toggle('d-none');
+    btn.textContent = isHidden ? 'Show' : 'Hide';
+  });
+</script>
 </body>
 </html>

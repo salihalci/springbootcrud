@@ -5,24 +5,28 @@ USE `employee_directory`;
 -- Table structure for table `employee`
 --
 
-DROP TABLE IF EXISTS `employee`;
+DROP TABLE IF EXISTS `book`;
 
-CREATE TABLE `employee` (
+CREATE TABLE `book` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(45) DEFAULT NULL,
-  `last_name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
+  `title` varchar(45) DEFAULT NULL,
+  `author` varchar(45) DEFAULT NULL,
+  `picture_url` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB
+AUTO_INCREMENT=1
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_turkish_ci;
 
 --
 -- Data for table `employee`
 --
 
-INSERT INTO `employee` VALUES 
-	(1,'Leslie','Andrews','leslie@luv2code.com'),
-	(2,'Emma','Baumgarten','emma@luv2code.com'),
-	(3,'Avani','Gupta','avani@luv2code.com'),
-	(4,'Yuri','Petrov','yuri@luv2code.com'),
-	(5,'Juan','Vega','juan@luv2code.com');
+INSERT INTO `book` (`id`, `title`, `author`, `picture_url`) VALUES
+(1, 'Sefiller', 'Victor Hugo', 'sefiller.jpg'),
+(2, 'Suç ve Ceza', 'Fyodor Dostoyevski', 'suc_ve_ceza.jpg'),
+(3, '1984', 'George Orwell', '1984.jpg'),
+(4, 'Kürk Mantolu Madonna', 'Sabahattin Ali', 'kurk_mantolu_madonna.jpg'),
+(5, 'Simyacı', 'Paulo Coelho', 'simyaci.jpg');
+
 
