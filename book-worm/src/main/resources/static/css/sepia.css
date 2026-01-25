@@ -196,3 +196,51 @@ table tbody tr:hover {
 .alert-danger {
     border-color: #8b3a3a;
 }
+/* Action Buttons – Notebook Style (Compact Version) */
+.action-btn {
+    font-family: 'Indie Flower', cursive;
+    font-size: 0.85rem; /* daha küçük yazı */
+    padding: 0.25rem 0.6rem; /* kompakt padding */
+    border-radius: 4px; /* biraz daha küçük köşe */
+    cursor: pointer;
+    border: 1px solid #8b6b45;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    margin: 0 2px; /* butonlar arası küçük boşluk */
+}
+
+/* Edit Button – daha belirgin sepya / kahverengi */
+.action-btn.edit-btn {
+    background-color: #f0a500;
+    color: #3f2d20;
+}
+
+.action-btn.edit-btn:hover {
+    background-color: #d18b00;
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Delete Button – kırmızı ton */
+.action-btn.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.action-btn.delete-btn:hover {
+    background-color: #c0392b;
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Save Button – yeşil ton */
+.action-btn.save-btn {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.action-btn.save-btn:hover {
+    background-color: #1e8449;
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
