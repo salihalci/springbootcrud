@@ -1,6 +1,6 @@
-package com.luv2code.springboot.cruddemo.service;
+package com.sa.bookworm.service;
 
-import com.luv2code.springboot.cruddemo.entity.Book;
+import com.sa.bookworm.entity.Book;
 
 import java.util.List;
 

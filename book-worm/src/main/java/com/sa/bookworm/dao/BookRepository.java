@@ -1,6 +1,6 @@
-package com.luv2code.springboot.cruddemo.dao;
+package com.sa.bookworm.dao;
 
-import com.luv2code.springboot.cruddemo.entity.Book;
+import com.sa.bookworm.entity.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

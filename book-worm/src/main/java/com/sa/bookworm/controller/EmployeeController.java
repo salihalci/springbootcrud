@@ -1,8 +1,6 @@
+/*
 package com.luv2code.springboot.cruddemo.controller;
 
-import com.luv2code.springboot.cruddemo.entity.Employee;
-import com.luv2code.springboot.cruddemo.rest.EmployeeRestController;
-import com.luv2code.springboot.cruddemo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,3 +53,4 @@ public class EmployeeController {
         return "employees/employee-form";
     }
 }
+*/

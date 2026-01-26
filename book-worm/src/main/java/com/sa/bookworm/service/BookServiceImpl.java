@@ -1,8 +1,7 @@
-package com.luv2code.springboot.cruddemo.service;
+package com.sa.bookworm.service;
 
-import com.luv2code.springboot.cruddemo.dao.BookRepository;
-import com.luv2code.springboot.cruddemo.entity.Book;
-import com.luv2code.springboot.cruddemo.entity.Employee;
+import com.sa.bookworm.dao.BookRepository;
+import com.sa.bookworm.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
